@@ -7,6 +7,10 @@ class SearchReferrerTermsExtension < Radiant::Extension
   def activate
     Page.class_eval {
       include ReferrerTermsTags
+      
+      def cache?
+        false
+      end
     }
     # ReferrerTermsTags
   end
